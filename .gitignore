@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build Outputs
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# AI Studio and local tooling caches
+.aistudio/
+.vite/
+.turbo/
+.cache/
+
+# System and logs
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment and sensitive keys (NEVER commit secrets to git)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# Credentials & Service accounts
+*service-account*.json
+*firebase-adminsdk*.json
+*.pem
+*.key
+*.cert
+
+# Firebase cache
+.firebase/
+.firebaserc
+
+# IDE & Editor caches
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

@@ -1,0 +1,10 @@
+{
+  "name": "MediNexus - AI Healthcare & Medical Records",
+  "description": "AI-powered healthcare assistance, medical report analysis, emergency alerts, and secure personal medical records library.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

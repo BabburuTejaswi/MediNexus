@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediNexus - AI Healthcare & Medical Records</title>
+    <meta name="description" content="AI-powered healthcare assistance, medical report analysis, emergency alerts, and secure personal medical records library." />
+    <meta property="og:title" content="MediNexus - AI Healthcare & Medical Records" />
+    <meta property="og:description" content="AI-powered healthcare assistance, medical report analysis, emergency alerts, and secure personal medical records library." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+      // Gracefully prevent unhandled promise rejections specifically triggered when
+      // Vite dev server WebSocket connections are terminated by preview reverse proxies.
+      // All other application errors, network errors, and rejections are preserved.
+      window.addEventListener('unhandledrejection', function(event) {
+        var reason = event.reason;
+        var msg = (reason && (reason.message || reason.stack)) || String(reason || '');
+        if (
+          msg.includes('WebSocket closed without opened') ||
+          msg.includes('failed to connect to websocket')
+        ) {
+          event.preventDefault();
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

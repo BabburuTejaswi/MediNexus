@@ -1,0 +1,28 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // User medical records path: users/{userId}/reports/{fileName}
+    match /users/{userId}/reports/{fileName} {
+      // Allow read/delete only if the authenticated user matches the userId folder
+      allow read, delete: if request.auth != null && request.auth.uid == userId;
+      
+      // Allow write only if:
+      // 1. Authenticated user matches path userId
+      // 2. File size is under 15MB
+      // 3. File type is PDF or supported image (jpeg, png, webp)
+      allow create: if request.auth != null 
+                    && request.auth.uid == userId
+                    && request.resource.size < 15 * 1024 * 1024
+                    && (request.resource.contentType.matches('application/pdf')
+                        || request.resource.contentType.matches('image/jpeg')
+                        || request.resource.contentType.matches('image/png')
+                        || request.resource.contentType.matches('image/webp'));
+    }
+
+    // Default deny for all other files
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
